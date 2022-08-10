@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './DatingCards.css'
 import DatingCard from 'react-tinder-card'
+import axios from './axios'
 
 const DatingCards = () => {
 
@@ -18,6 +19,15 @@ const DatingCards = () => {
             name: "Another Girl", imgUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVu"
         }
     ])
+
+    //useEffect hook to do the API Call
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const req = await axios.get("/dating/cards")
+    //         setPeople(req.data)
+    //     }
+    //     fetchData()
+    // }, [])
 
     const swiped = (direction, nameToDelete) => {
         console.log("receiving " + nameToDelete)
